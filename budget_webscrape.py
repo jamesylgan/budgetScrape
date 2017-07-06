@@ -17,7 +17,7 @@ from bs4 import BeautifulSoup
  """
 codes = ["K662", "X301"]
 
-def budgetFetch(ATS):
+def budgetFetch17(ATS):
 
 	# figure out URL format
 	url = "https://www.nycenet.edu/offices/d_chanc_oper/budget/dbor/galaxy/galaxybudgetsummaryto/display2.asp?DDBSSS_INPUT="+ATS+"&Submit=Enter&PROG_YEAR=2017&POP_SCH="+ATS
@@ -71,6 +71,25 @@ def budgetFetch(ATS):
 				if not lineStr[i].isupper() and lineStr[i+1].isupper() and \
 				lineStr[i].isalpha() and lineStr[i+1].isalpha():
 					lineStr = lineStr[:i+1] + ' ' + lineStr[i+1:]
+		"""if len(lineStr) > 4:
+			if lineStr[:4] == "SBST":
+				lineStr = lineStr[:4] + ' ' + lineStr[4:]
+			if lineStr[:4] == "OTPS":
+				lineStr = lineStr[:4] + ' ' + lineStr[4:]"""
+		# lame hardcode
+		lineStr = lineStr.replace("0.00", "")
+		lineStr = lineStr.replace("1.00", "")
+		lineStr = lineStr.replace("2.00", "")
+		lineStr = lineStr.replace("3.00", "")
+		lineStr = lineStr.replace("4.00", "")
+		lineStr = lineStr.replace("5.00", "")
+		lineStr = lineStr.replace("6.00", "")
+		lineStr = lineStr.replace("7.00", "")
+		lineStr = lineStr.replace("8.00", "")
+		lineStr = lineStr.replace("9.00", "")
+		lineStr = lineStr.replace("0.50", "")
+		lineStr = lineStr.replace("OTPS", "")
+		lineStr = lineStr.replace("SBST", "")
 		lines.append(lineStr)
 
 	# O(n^2+n), could improve
@@ -80,16 +99,70 @@ def budgetFetch(ATS):
 			if (((term) in line) and not printed):
 				printed = True
 				print(line)
-				#with open("Budgets.txt", "w") as text_file:
-				#	text_file.write(line)
+				with open("Budgets.txt", "a") as text_file:
+					text_file.write(line+'\n')
 
 
 
 	#print(budget)
 	#return budget
 
+def budgetFetch16(ATS):
+
+	# figure out URL format
+	url = "https://www.nycenet.edu/offices/d_chanc_oper/budget/dbor/galaxy/galaxybudgetsummaryto/display2.asp?DDBSSS_INPUT="+ATS+"&Submit=Enter&PROG_YEAR=2017&POP_SCH="+ATS
+
+	keywords = ["CONSULTANTS", "PROFESSIONAL", "ABSENCE", "SUMMER",
+			"DEVELOPMENT", "SUPPORT STAFF", 
+			"SERVICES", "PROGRAMS"]
+
+	page = requests.get(url)
+
+	if(page.status_code!=200):
+		return "ERROR"
+
+	soup = BeautifulSoup(page.content, 'html.parser')
+
+	lines = []
+
+	# Better looking output: nothing colliding
+	for line in soup.find_all('tr', class_='mysection'):
+		lineStr = line.get_text()
+		if len(lineStr) > 0:
+			for i in range(0, len(lineStr)-1):
+				if not lineStr[i].isupper() and lineStr[i+1].isupper() and \
+				lineStr[i].isalpha() and lineStr[i+1].isalpha():
+					lineStr = lineStr[:i+1] + ' ' + lineStr[i+1:]
+
+		# lame hardcode to remove irrelevant data
+		lineStr = lineStr.replace("0.00", "")
+		lineStr = lineStr.replace("1.00", "")
+		lineStr = lineStr.replace("2.00", "")
+		lineStr = lineStr.replace("3.00", "")
+		lineStr = lineStr.replace("4.00", "")
+		lineStr = lineStr.replace("5.00", "")
+		lineStr = lineStr.replace("6.00", "")
+		lineStr = lineStr.replace("7.00", "")
+		lineStr = lineStr.replace("8.00", "")
+		lineStr = lineStr.replace("9.00", "")
+		lineStr = lineStr.replace("0.50", "")
+		lineStr = lineStr.replace("OTPS", "")
+		lineStr = lineStr.replace("SBST", "")
+		lines.append(lineStr)
+
+	# O(n^2+n), could improve
+	for line in lines:
+		printed = False
+		for term in keywords:
+			if (((term) in line) and not printed):
+				printed = True
+				print(line)
+				with open("Budgets.txt", "a") as text_file:
+					text_file.write(line+'\n')
+
 
 def main():
 	for code in codes:
-		print('\n\n'+code+'\n')
-		budgetFetch(code)
+		with open("Budgets.txt", "a") as text_file:
+			text_file.write('\n\n'+code+'\n\n')
+		budgetFetch17(code)
