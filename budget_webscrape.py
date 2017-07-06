@@ -15,14 +15,18 @@ from bs4 import BeautifulSoup
  2., ganize: pick the useful ones
  3. Return in convenient manner
  """
-
+codes = ["K662", "X301"]
 
 def budgetFetch(ATS):
-	
+
 	# figure out URL format
 	url = "https://www.nycenet.edu/offices/d_chanc_oper/budget/dbor/galaxy/galaxybudgetsummaryto/display2.asp?DDBSSS_INPUT="+ATS+"&Submit=Enter&PROG_YEAR=2017&POP_SCH="+ATS
 
 	#budget = []
+
+	keywords = ["CONSULTANTS", "PROFESSIONAL", "ABSENCE", "SUMMER",
+			"DEVELOPMENT", "SUPPORT STAFF", 
+			"SERVICES", "PROGRAMS"]
 
 	page = requests.get(url)
 
@@ -59,12 +63,15 @@ def budgetFetch(ATS):
 
 	lines = []
 
+	# Better looking output: nothing colliding
 	for line in soup.find_all('tr', class_='mysection'):
-		lines.append(line.get_text())
-
-	keywords = ["CONSULTANTS", "PROFESSIONAL", "ABSENCE", "SUMMER",
-				"DEVELOPMENT", "SUPPORT STAFF", 
-				"SERVICES", "PROGRAMS"]
+		lineStr = line.get_text()
+		if len(lineStr) > 0:
+			for i in range(0, len(lineStr)-1):
+				if not lineStr[i].isupper() and lineStr[i+1].isupper() and \
+				lineStr[i].isalpha() and lineStr[i+1].isalpha():
+					lineStr = lineStr[:i+1] + ' ' + lineStr[i+1:]
+		lines.append(lineStr)
 
 	# O(n^2+n), could improve
 	for line in lines:
@@ -73,6 +80,16 @@ def budgetFetch(ATS):
 			if (((term) in line) and not printed):
 				printed = True
 				print(line)
+				#with open("Budgets.txt", "w") as text_file:
+				#	text_file.write(line)
+
+
 
 	#print(budget)
 	#return budget
+
+
+def main():
+	for code in codes:
+		print('\n\n'+code+'\n')
+		budgetFetch(code)
