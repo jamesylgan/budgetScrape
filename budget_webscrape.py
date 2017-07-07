@@ -138,6 +138,45 @@ def budgetFetch(ATS, year):
 		with open("Budgets.txt", "a") as text_file:
 			text_file.write(line+'\n')
 
+def FSF(ATS, year):
+	# figure out URL format
+	url = "http://schools.nyc.gov/AboutUs/funding/schoolbudgets/GalaxyAllocationFY"+\
+			year+".htm?BSSS_INPUT="+ATS[2:]
+
+	page = requests.get(url)
+
+	if(page.status_code!=200):
+		return "ERROR"
+
+	soup = BeautifulSoup(page.content, 'html.parser')
+
+	lines = []
+
+	seen = False
+
+	for line in soup.find_all('tr'):
+		lineStr = line.get_text()
+		# find FSF funding
+		if "TL Fair Student Funding" in lineStr:
+			if seen == False:
+				seen = True
+			elif seen == True:
+				lineStr = lineStr.replace("                        ", " $ ")
+				lines.append(lineStr)
+
+		# Better looking output: nothing colliding
+		if len(lineStr) > 0:
+			for i in range(0, len(lineStr)-1):
+				if not lineStr[i].isupper() and lineStr[i+1].isupper() and \
+				lineStr[i].isalpha() and lineStr[i+1].isalpha():
+					lineStr = lineStr[:i+1] + ' ' + lineStr[i+1:]
+
+	# O(n^2+n), could improve
+	for line in lines:
+		printedF = False
+		with open("Budgets.txt", "a") as text_file:
+			text_file.write(line+'\n')
+	
 def main():
 	print("Running...")
 	for code in codes:
@@ -147,13 +186,17 @@ def main():
 		with open("Budgets.txt", "a") as text_file:
 			text_file.write('\n'+"2017"+'\n\n')	
 		budgetFetch(code,"2017")
+		FSF(code,"2017")
 		with open("Budgets.txt", "a") as text_file:
 			text_file.write('\n'+"2016"+'\n\n')	
 		budgetFetch(code,"2016")
+		FSF(code,"2016")
 		with open("Budgets.txt", "a") as text_file:
 			text_file.write('\n'+"2015"+'\n\n')	
 		budgetFetch(code,"2015")
+		FSF(code,"2015")
 		with open("Budgets.txt", "a") as text_file:
 			text_file.write('\n'+"2014"+'\n\n')	
 		budgetFetch(code,"2014")
+		FSF(code,"2014")
 	print("Done!")
