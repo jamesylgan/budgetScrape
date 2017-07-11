@@ -11,11 +11,12 @@ Program to scrape NYC DOE school budgets
 
 #
 
-#FAQS:
+# FAQS:
 1. ERRNO13 PERMISSION DENIED
 * Please place the file onto your desktop. If you put it somewhere else your computers permissions may deny write access, and the program will crash early.
 
 #
+# Copyright
 Made by James Gan for Practice Makes Perfect
 
 Available under The MIT License:
