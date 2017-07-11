@@ -1,7 +1,8 @@
 # budgetScrape
 Program to scrape NYC DOE school budgets
-#
 
+#
+# USAGE INSTRUCTIONS
 1. DOWNLOAD PYTHON 3
 2. OPEN UP TERMINAL (CMD IN WINDOWS)
 3. USE CD (CD .. GOES UP A FOLDER, CD [FOLDERNAME] GOES DOWN) TO NAVIGATE TO FOLDER CONTAINING BUDGET_WEBSCRAPE.PY
@@ -10,8 +11,7 @@ Program to scrape NYC DOE school budgets
 6. TYPE "budgetFetch.main()" AND HIT ENTER
 
 #
-
-# FAQS:
+# FAQ
 1. ERRNO13 PERMISSION DENIED
 * Please place the file onto your desktop. If you put it somewhere else your computers permissions may deny write access, and the program will crash early.
 
