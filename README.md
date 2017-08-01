@@ -3,18 +3,28 @@ Program to scrape NYC DOE school budgets
 
 #
 # USAGE INSTRUCTIONS
-1. DOWNLOAD PYTHON 3
+1. DOWNLOAD PYTHON 3.6
 2. OPEN UP TERMINAL (CMD IN WINDOWS)
-3. USE CD (CD .. GOES UP A FOLDER, CD [FOLDERNAME] GOES DOWN) TO NAVIGATE TO FOLDER CONTAINING BUDGET_WEBSCRAPE.PY
-4. TYPE "python" AND HIT ENTER
-5. TYPE "import Budget_Webscrape" AND HIT ENTER
-6. TYPE "budgetFetch.main()" AND HIT ENTER
+3. TYPE IN "PIP INSTALL BS4" AND HIT ENTER
+	IF THIS DOES NOT WORK, TYPE "SUDO PIP INSTALL BS4"
+4. TYPE IN "PIP INSTALL REQUESTS" AND HIT ENTER
+	IF THIS DOES NOT WORK, TYPE "SUDO PIP INSTALL REQUESTS"
+5. USE CD (CD .. GOES UP A FOLDER, CD [FOLDERNAME] GOES DOWN) TO NAVIGATE TO FOLDER CONTAINING BUDGET_WEBSCRAPE.PY
+6. TYPE "python" AND HIT ENTER
+7. TYPE "import budget_webscrape" AND HIT ENTER
+8. TYPE "budget_webscrape.main()" AND HIT ENTER
 
 #
 # FAQ
 1. ERRNO13 PERMISSION DENIED
 * Please place the file onto your desktop. If you put it somewhere else your computers permissions may deny write access, and the program will crash early.
 
+2. IT WONT CHANGE THE KEYWORDS OR SCHOOLS
+* You have two options: technical, and simple.
+  a. Close the terminal window, re-open it and start from step 6.
+  b. Type "import imp" and hit enter,
+"imp.reload(budget_webscrape)" and hit enter,
+and type "budget_webscrape.main()" and hit enter.
 #
 # Copyright
 Made by James Gan for Practice Makes Perfect
