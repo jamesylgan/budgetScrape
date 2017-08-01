@@ -21,10 +21,10 @@ Program to scrape NYC DOE school budgets
 
 2. IT WONT CHANGE THE KEYWORDS OR SCHOOLS
 * You have two options: technical, and simple.
-  a. Close the terminal window, re-open it and start from step 6.
-  b. Type "import imp" and hit enter,
-"imp.reload(budget_webscrape)" and hit enter,
-and type "budget_webscrape.main()" and hit enter.
+	* Close the terminal window, re-open it and start from step 6.
+	* Type "import imp" and hit enter,
+	"imp.reload(budget_webscrape)" and hit enter,
+	and type "budget_webscrape.main()" and hit enter.
 #
 # Copyright
 Made by James Gan for Practice Makes Perfect
