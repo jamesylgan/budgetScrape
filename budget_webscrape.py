@@ -2,15 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 
 """ for use with the NYC DOE Galaxy budget page at:
- https://www.nycenet.edu/offices/d_chanc_oper/budget/dbor/galaxy/galaxybudgetsummaryto/display2.asp?DDBSSS_INPUT=K662&Submit=Enter&PROG_YEAR=2017&POP_SCH=K662
- import ______
- import imp
- imp.reload(____)
- budgetFetch(ATS)
- """
+https://www.nycenet.edu/offices/d_chanc_oper/budget/dbor/galaxy/galaxybudgetsummaryto/display2.asp?DDBSSS_INPUT=K662&Submit=Enter&PROG_YEAR=2017&POP_SCH=K662
 
-
-""" TO-DO:
+TO-DO:
  3. School Name
  5. Add in better specification
  6. Make quicker
@@ -40,7 +34,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
- """
+"""
 
 codes = []
 keywords = []
