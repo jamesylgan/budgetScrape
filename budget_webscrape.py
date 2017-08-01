@@ -42,14 +42,20 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
  """
 
-codes = ["14K614", "19K662", "08X301", "09X042", "09X132", "18K272", "03M299",
-		"09X236", "18K211", "18K366", "84R073", "09X311", "23K446", "23K668", "12X129", 
-		"09X117", "11X103", "28Q050", "27Q319", "27Q042", "27Q062", "16K005", "27Q053", 
-		"12X196", "07X001", "28Q008", "08X269", "09X218", "23K284", "27Q105", "27Q105",
-		"04M050", "28Q217"]
+codes = []
+keywords = []
 
-keywords = ["CONSULTANTS", "PROFESSIONAL", "ABSENCE", "SUMMER",
-			"DEVELOPMENT", "SUPPORT STAFF", "SERVICES", "PROGRAMS"]
+with open ('schools.txt', 'rb') as fp:
+	content = fp.readlines()
+for line in content:
+	line = str(line.strip())[2:8]
+	codes.append(line)
+
+with open ('keywords.txt', 'rb') as fp:
+	content = fp.readlines()
+for line in content:
+	line = str(line.strip())[2:8]
+	keywords.append(line)
 
 def budgetFetch(ATS, year):
 
