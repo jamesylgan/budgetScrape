@@ -35,10 +35,10 @@ Program to scrape NYC DOE school budgets
 	and type "budget_webscrape.main()" and hit enter.
 	
 3. IT ISN'T DOING ANYTHING
-* YOU MIGHT HAVE CREATED THE schools.txt AND keywords.txt INCORRECTLY: MAKE SURE IT IS IN PLAIN TEXT FORMAT AND THE RIGHT FILETYPE. IN WINDOWS, USING TEXTPAD WILL GENERALLY WORK. MICROSOFT OFFICE, FOR EXAMPLE, WILL OFTEN NOT WORK.
+* You might have created the schools.txt and keywords.txt incorrectly: make sure they are in plain text format and the right filetype. In Windows, using textpad will generally work. Microsoft Office, for example, will often not work. Try editing the example files I provided, only using textpad.
 
 4. IT IS GIVING ME WEIRD BUDGET LINES
-* THIS WOULD REQUIRE PROGRAMMING CHANGES. YOU CAN EDIT THE CODE IF YOU TRUST YOURSELF, OR BECOME CREATE, OR DO THINGS MANUALLY. E.G. SUBTOTAL LINES FOR GROUPS OF THINGS, YOU COULD INCLUDE "SUBTOTAL" TO GET THOSE LINES TOO.
+* This would require programming changes. You can edit the code if you trust yourself, or become create, or do things manually. e.g. subtotal lines for groups of things, you could include "subtotal" to get those lines too.
 #
 # Copyright
 Made by James Gan for Practice Makes Perfect
