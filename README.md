@@ -3,6 +3,7 @@ Program to scrape NYC DOE school budgets
 
 #
 # USAGE INSTRUCTIONS
+# First Time Use (A.K.A If you have never run the program on the computer you are using)
 1. DOWNLOAD PYTHON 3.6, MAKE SURE TO SELECT "ADD PYTHON TO PATH" OPTION, AND RESTART YOUR COMPUTER
 	* https://www.python.org/downloads/
 2. OPEN UP TERMINAL (CMD IN WINDOWS)
@@ -14,6 +15,8 @@ Program to scrape NYC DOE school budgets
 	* IF THIS DOES NOT WORK, TYPE "sudo pip install requests"
 5. DOWNLOAD THE "budget_webscrape.py" FILE AND MOVE TO DESKTOP
 	* THE GREEN "CLONE OR DOWNLOAD" BUTTON ABOVE AND TO THE RIGHT -> DOWNLOAD ZIP -> UNZIP FILE -> MOVE TO DESKTOP
+	
+# Returning Users	
 6. IN THE TERMINAL, USE CD COMMANDS ("cd .." GOES UP A FOLDER, "cd [FOLDERNAME]" GOES DOWN) TO NAVIGATE TO FOLDER CONTAINING BUDGET_WEBSCRAPE.PY
 	![example_cd](https://user-images.githubusercontent.com/8934469/28842126-7634234e-76ca-11e7-9d98-619bcfae4362.png)
 7. ADD SCHOOL ATS CODES INTO A FILE CALLED "schools.txt" SEPARATED BY ONLY NEW LINES, THE FILE MUST BE IN THE SAME FOLDER AS BUDGET_WEBSCRAPE.PY. EXAMPLE PROVIDED.
