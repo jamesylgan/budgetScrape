@@ -42,6 +42,10 @@ Program to scrape NYC DOE school budgets
 
 4. IT IS GIVING ME WEIRD BUDGET LINES
 * This would require programming changes. You can edit the code if you trust yourself, or become create, or do things manually. e.g. subtotal lines for groups of things, you could include "subtotal" to get those lines too.
+
+5. WHERE IS THE BUDGET?
+* You might have left the old "Budgets.txt" file in the folder before running the program again! This will add on the results to the bottom of the old file. Instead, try deleting or moving the old "Budgets.txt" file before running the program.
+
 #
 # Copyright
 Made by James Gan for Practice Makes Perfect
