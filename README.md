@@ -55,3 +55,6 @@ Program to scrape NYC DOE school budgets from:
 
 7. IT WONT FIND THE KEYWORD PROPERLY
 * You need to get the case right! Look at the pages it is searching for to find how they capitalize and dictate items.
+
+8. IT WONT WORK AT ALL
+* I could have messed something up. Start an issue and let me know what the problem is! Alternatively, you can click "Commits" and download an old version of the program (last known working version @ https://github.com/jamesylgan/budgetScrape/tree/a8e051aaf5ae1666e15d3bf018b1149459d80b2c )
