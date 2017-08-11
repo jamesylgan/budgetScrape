@@ -52,3 +52,6 @@ Program to scrape NYC DOE school budgets from:
 
 6. IT IS ONLY DOING 2017-2014
 * Yeah. That happens. Unfortunately, you will have to go into "budget_webscrape.py" and edit the code at the bottom to fix that. Good luck :)
+
+7. IT WONT FIND THE KEYWORD PROPERLY
+* You need to get the case right! Look at the pages it is searching for to find how they capitalize and dictate items.
