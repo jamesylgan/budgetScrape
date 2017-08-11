@@ -1,5 +1,8 @@
 # budgetScrape
-Program to scrape NYC DOE school budgets
+Program to scrape NYC DOE school budgets from:
+1. https://www.nycenet.edu/offices/d_chanc_oper/budget/dbor/galaxy/galaxybudgetsummaryto/display2.asp?DDBSSS_INPUT=K662&Submit=Enter&PROG_YEAR=2017&POP_SCH=K662
+2. http://schools.nyc.gov/Common/Templates/MainTemplate/CommonMainTemplate.aspx?NRMODE=Published&NRNODEGUID=%7b9E62DB6A-8687-40E3-93D0-5FF6FA11C46D%7d&NRORIGINALURL=%2fAboutUs%2ffunding%2fschoolbudgets%2fGalaxyAllocationFY2017%2ehtm%3fBSSS_INPUT%3d04K211&NRCACHEHINT=Guest&BSSS_INPUT=04K211
+
 
 #
 # USAGE INSTRUCTIONS
