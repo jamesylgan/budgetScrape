@@ -12,7 +12,6 @@ TO-DO:
  
  NOTE: Functions copy a lot of code in case formatting differs year to year.
 
- Time spent: 4.5 hours
  Made by James Gan for Practice Makes Perfect
 
  Available under The MIT License:
